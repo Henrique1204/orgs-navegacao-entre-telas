@@ -1,0 +1,9 @@
+export {default as Abobora} from './Abobora.png';
+export {default as Aspargos} from './Aspargos.png';
+export {default as Batata} from './Batata.png';
+export {default as Brocolis} from './Brocolis.png';
+export {default as Cenouras} from './Cenouras.png';
+export {default as Cenouras2} from './Cenouras2.png';
+export {default as Pepino} from './Pepino.png';
+export {default as Tomate} from './Tomate.png';
+export {default as Verduras} from './Verduras.png';
