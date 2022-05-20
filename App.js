@@ -1,22 +1,32 @@
 import React from 'react';
-import { StatusBar, SafeAreaView } from 'react-native';
-import useProdutores from './src/hooks/useProdutores';
+import {StatusBar, SafeAreaView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from './src/telas/Home';
-import Cesta from './src/telas/Cesta';
+import MelhoresProdutores from './src/telas/MelhoresProdutores';
+
+const style = {
+  flex: 1,
+};
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const produtores = useProdutores(false);
+  return (
+    <SafeAreaView style={style}>
+      <StatusBar />
 
-  return <SafeAreaView style={{ flex: 1 }}>
-    <StatusBar />
-    <Home melhoresProdutores={false} />
-    {/* {produtores.length > 0 && 
-      <Cesta produtor={{
-        nome: produtores[0].nome, 
-        imagem: produtores[0].imagem
-      }}
-      {...produtores[0].cestas[0]} />
-    } */}
-  </SafeAreaView>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+
+          <Tab.Screen
+            name="Melhores Produtores"
+            component={MelhoresProdutores}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
+  );
 }
