@@ -30,8 +30,10 @@ export default function Detalhes({nome, produtor, descricao, preco}) {
         //     routes: [{name: 'Home'}],
         //   })
         // }
-        // Reseta apenas a navegação stack
-        onPress={() => navigation.popToTop()}>
+        // Reseta apenas a navegação stack, porém não tem como passar params.
+        // onPress={() => navigation.popToTop()}
+        // Ao navegar para uma tela que está no começo da stack ele reset igual ao popToTop, porém permite passar params/
+        onPress={() => navigation.navigate('HomeScreen', {compra: {nome}})}>
         <Texto style={estilos.textoBotao}>{botaoComprar}</Texto>
       </TouchableOpacity>
     </>
