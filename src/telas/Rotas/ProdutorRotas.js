@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 
 const ProdutorRotas = ({component = Home, name = 'HomeScreen'}) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name={name} component={component} />
       <Stack.Screen name="Produtor" component={Produtor} />
     </Stack.Navigator>
